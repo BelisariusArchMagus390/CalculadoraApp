@@ -30,13 +30,13 @@ namespace Calculadora.ConsoleApp
         // entrada de dados
         static float[] numeros()
         {
-            Console.WriteLine("\n---------------------------------------------");
-            Console.Write("\nDigite o primeiro número: ");
+            Console.WriteLine("\n ---------------------------------------------");
+            Console.Write("\n Digite o primeiro número: ");
             float primeiroNumero = entradaNumeroFloat();
 
-            Console.Write("\nDigite o segundo número: ");
+            Console.Write("\n Digite o segundo número: ");
             float segundoNumero = entradaNumeroFloat();
-            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine(" ---------------------------------------------");
             
 
             float[] num = [primeiroNumero, segundoNumero];
@@ -61,7 +61,7 @@ namespace Calculadora.ConsoleApp
                 }
                 else
                 {
-                    Console.Write("Entrada inváliada! Favor digite um número: ");
+                    Console.Write(" Entrada inváliada! Favor digite um número: ");
                     strNumero = Console.ReadLine();
                 }
             }
@@ -88,7 +88,7 @@ namespace Calculadora.ConsoleApp
                 }
                 else
                 {
-                    Console.Write("Entrada inváliada! Favor digite um número: ");
+                    Console.Write(" Entrada inváliada! Favor digite um número: ");
                     strNumero = Console.ReadLine();
                 }
             }
@@ -109,13 +109,13 @@ namespace Calculadora.ConsoleApp
         // entrada de dados da tabuada
         static void mostrarTabuada()
         {
-            Console.WriteLine("\n---------------------------------------------");
-            Console.WriteLine("Tabuada");
-            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine("\n ---------------------------------------------");
+            Console.WriteLine(" Tabuada");
+            Console.WriteLine(" ---------------------------------------------");
 
-            Console.Write("\nDigite o número que deseja ver a sua tabuda: ");
+            Console.Write("\n Digite o número que deseja ver a sua tabuda: ");
             float numeroTabuada = entradaNumeroFloat();
-            Console.Write("\nDigite o número que definirá o limite da tabuada (apenas números inteiros): ");
+            Console.Write("\n Digite o número que definirá o limite da tabuada (apenas números inteiros): ");
             int limiteTabuada = entradaNumeroInt();
 
             Console.WriteLine();
@@ -134,9 +134,9 @@ namespace Calculadora.ConsoleApp
 
         static void historicoOperacoes()
         {
-            Console.WriteLine("\n---------------------------------------------");
-            Console.WriteLine("Histório de operações");
-            Console.WriteLine("---------------------------------------------\n");
+            Console.WriteLine("\n ---------------------------------------------");
+            Console.WriteLine(" Histório de operações");
+            Console.WriteLine(" ---------------------------------------------\n");
 
             int tabuadaContador = 1;
             int operacaoContador = 1;
@@ -150,7 +150,7 @@ namespace Calculadora.ConsoleApp
                         float numeroTabuada = Convert.ToSingle(operacoes[contador, 0]);
                         int limiteTabuada = Convert.ToInt32(operacoes[contador, 2]);
 
-                        Console.WriteLine($"Tabuada {tabuadaContador}: ");
+                        Console.WriteLine($" Tabuada {tabuadaContador}: ");
 
                         tabuada(numeroTabuada, limiteTabuada);
 
@@ -160,7 +160,7 @@ namespace Calculadora.ConsoleApp
                     }
                     else if (operacoes[contador, 4] == "false")
                     {
-                        Console.WriteLine($"Operação {operacaoContador}: {operacoes[contador, 0]} {operacoes[contador, 1]} {operacoes[contador, 2]} = {operacoes[contador, 3]}");
+                        Console.WriteLine($" Operação {operacaoContador}: {operacoes[contador, 0]} {operacoes[contador, 1]} {operacoes[contador, 2]} = {operacoes[contador, 3]}");
                         operacaoContador += 1;
                     }
                 }
@@ -180,20 +180,20 @@ namespace Calculadora.ConsoleApp
                 float[] num = new float[2];
 
                 Console.Clear();
-                Console.WriteLine("---------------------------------------------");
-                Console.WriteLine("Calculadora Tabajara 2025");
-                Console.WriteLine("---------------------------------------------");
+                Console.WriteLine(" ---------------------------------------------");
+                Console.WriteLine(" Calculadora Tabajara 2025");
+                Console.WriteLine(" ---------------------------------------------");
 
                 // Menu
-                Console.WriteLine("\n1 - Soma");
-                Console.WriteLine("2 - Subtração");
-                Console.WriteLine("3 - Multiplicação");
-                Console.WriteLine("4 - Divisão");
-                Console.WriteLine("5 - Tabuada");
-                Console.WriteLine("6 - Histórico de operações");
-                Console.WriteLine("7 - Sair");
-                Console.WriteLine("\n---------------------------------------------");
-                Console.Write("\nDigite uma Opção: ");
+                Console.WriteLine("\n 1 - Soma");
+                Console.WriteLine(" 2 - Subtração");
+                Console.WriteLine(" 3 - Multiplicação");
+                Console.WriteLine(" 4 - Divisão");
+                Console.WriteLine(" 5 - Tabuada");
+                Console.WriteLine(" 6 - Histórico de operações");
+                Console.WriteLine(" 7 - Sair");
+                Console.WriteLine("\n ---------------------------------------------");
+                Console.Write("\n Digite uma Opção: ");
                 string opcao = Console.ReadLine();
 
                 if ((opcao == "1") ^ (opcao == "2") ^ (opcao == "3") ^ (opcao == "4") ^ (opcao == "7"))
@@ -230,7 +230,7 @@ namespace Calculadora.ConsoleApp
                             operacoes[cont, 1] = "/";
                             if ((primeiroNumero == 0.0) ^ (segundoNumero == 0.0))
                             {
-                                Console.WriteLine("Não pode ser feita uma divisão por 0.");
+                                Console.WriteLine(" Não pode ser feita uma divisão por 0.");
                             }
                             else
                             {
@@ -241,8 +241,8 @@ namespace Calculadora.ConsoleApp
                             // sair
                             break;
                         default:
-                            Console.WriteLine("\n---------------------------------------------");
-                            Console.WriteLine("\nEssa opção não existe, favor digitar novamente.");
+                            Console.WriteLine("\n ---------------------------------------------");
+                            Console.WriteLine("\n Essa opção não existe, favor digitar novamente.");
                             break;
                     }
                 }
@@ -257,8 +257,8 @@ namespace Calculadora.ConsoleApp
                 }
                 else
                 {
-                    Console.WriteLine("\n---------------------------------------------");
-                    Console.WriteLine("\nEssa opção não existe, favor digitar novamente.");
+                    Console.WriteLine("\n ---------------------------------------------");
+                    Console.WriteLine("\n Essa opção não existe, favor digitar novamente.");
                 }
 
                 if ((opcao == "1") ^ (opcao == "2") ^ (opcao == "3") ^ (opcao == "4"))
@@ -270,12 +270,12 @@ namespace Calculadora.ConsoleApp
                     operacoes[cont, 3] = resultadoStr;
                     operacoes[cont, 4] = "false";
 
-                    Console.WriteLine($"\nResultado: {resultado}");
+                    Console.WriteLine($"\n Resultado: {resultado}");
                 }
 
                 cont += 1;
 
-                Console.WriteLine("\nAperte Enter para continuar...");
+                Console.WriteLine("\n Aperte Enter para continuar...");
 
                 Console.ReadLine();
             }
